@@ -93,7 +93,7 @@ def create_app(db_url=None):
         from models.tag import TagModel
         from models.item_tags import ItemTag
         from models.user import UserModel
-
+        
         #db.create_all()
 
     # Register blueprints
