@@ -7,7 +7,6 @@ data.db
 __pycache__/
 .myenv/
 myenv/
-README.md
-
+data.db
 
 
