@@ -7,14 +7,15 @@ from resources.user import blp as UserBluePrint
 from flask_jwt_extended import JWTManager
 from blocklist import BLOCKLIST
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 from db import db
 import os
 import secrets
 
 
 def create_app(db_url=None):
+    load_dotenv()
     app = Flask(__name__)
-
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
     app.config["API_VERSION"] = "v1"

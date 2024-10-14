@@ -8,5 +8,6 @@ __pycache__/
 .myenv/
 myenv/
 data.db
+.env
 
 
