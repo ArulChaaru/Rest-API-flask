@@ -56,13 +56,13 @@ class Userdetails(MethodView):
 
 @blp.route("/user")
 class createuser(MethodView):
-    @jwt_required()
+    #@jwt_required()
     @blp.response(201,UserSchema(many=True))
     def get(self):
         user = UserModel.query.all()
         return user
 
-    @jwt_required()
+    #@jwt_required()
     @blp.arguments(UserSchema)
     @blp.response(201,UserSchema)
     def post(self,userdata):
