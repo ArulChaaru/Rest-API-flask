@@ -11,11 +11,20 @@ from dotenv import load_dotenv
 from db import db
 import os
 import secrets
+import redis
+from rq import Queue
+from flask_cors import CORS
 
 
 def create_app(db_url=None):
     load_dotenv()
     app = Flask(__name__)
+    CORS(app)
+    connection = redis.from_url(
+        os.getenv("Redis_URL")
+    )
+
+    app.queue = Queue("emails",connection=connection)
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
     app.config["API_VERSION"] = "v1"
