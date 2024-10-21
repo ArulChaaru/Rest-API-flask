@@ -10,3 +10,4 @@ gunicorn
 psycopg2-binary  # Add this line
 rq
 redis
+requests
